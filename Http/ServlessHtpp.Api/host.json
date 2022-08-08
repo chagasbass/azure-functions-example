@@ -1,0 +1,36 @@
+{
+  "version": "2.0",
+  "logging": {
+    "applicationInsights": {
+      "samplingSettings": {
+        "isEnabled": true,
+        "excludedTypes": "Request",
+        "maxTelemetryItemsPerSecond": 20
+      }
+    }
+  },
+  "Serilog": {
+    "MinimumLevel": {
+      "Default": "Information",
+      "Override": {
+        "Microsoft": "Error",
+        "HealthChecks": "Error",
+        "Microsoft.AspNet.Core": "Error",
+        "Microsoft.Hosting.Lifetime": "Error",
+        "Microsoft.EntityFrameworkCore": "Error",
+        "Host.Results": "Error",
+        "Function": "Error",
+        "Host.Aggregator": "Information"
+      }
+    }
+  },
+  "extensions": {
+    "kafka": {
+      "maxBatchSize": 100,
+      "SubscriberIntervalInSeconds": 3,
+      "ExecutorChannelCapacity": 1,
+      "ChannelFullRetryIntervalInMs": 50,
+      "MaxPollIntervalMs": 300000
+    }
+  }
+}

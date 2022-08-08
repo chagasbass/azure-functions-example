@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Extensions\Middlewares\" />
+    <Folder Include="Extensions\Logs\" />
+    <Folder Include="Shared\BaseEntities\" />
+    <Folder Include="Shared\Configurations\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Servless.Extensions\Serverless.Extensions.csproj" />
+  </ItemGroup>
+
+</Project>
