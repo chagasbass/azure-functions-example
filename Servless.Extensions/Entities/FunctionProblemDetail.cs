@@ -2,7 +2,7 @@
 
 namespace Serverless.Extensions.Entities;
 
-public record MinimalApiProblemDetail
+public record FunctionProblemDetail
 {
     public int Status { get; set; }
     public string? Title { get; set; }
@@ -11,7 +11,7 @@ public record MinimalApiProblemDetail
     public string? Detail { get; set; }
     public object InvalidParams { get; set; }
 
-    public MinimalApiProblemDetail(object invalidParams, string? detail, int status, string? title, string? instance = null)
+    public FunctionProblemDetail(object invalidParams, string? detail, int status, string? title, string? instance = null)
     {
         InvalidParams = invalidParams;
         Detail = detail;

@@ -32,7 +32,7 @@ public class ProdutoApplicationServices : IProdutoApplicationServices
 
         if (!produto.IsValid)
         {
-            _notificationServices.AddNotifications(produto.Notifications.ToList(), StatusCodeOperation.BadRequest);
+            _notificationServices.AddNotifications(produto.Notifications.ToList(), StatusCodeOperation.BusinessError);
 
             return new CommandResult(produto.Notifications.ToList(), false, "Problemas na integração do Produto");
         }

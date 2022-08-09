@@ -110,7 +110,7 @@ public class ApiCustomResults : IApiCustomResults
         var invalidParams = jsonNotifications;
         var defaultTitle = "Um erro ocorreu ao processar o request.";
 
-        var problemDetails = new MinimalApiProblemDetail(invalidParams, commandResult.Message, statusCode, defaultTitle);
+        var problemDetails = new FunctionProblemDetail(invalidParams, commandResult.Message, statusCode, defaultTitle);
 
         commandResult.Data = problemDetails;
 

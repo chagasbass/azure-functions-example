@@ -15,7 +15,8 @@ public class Produto : BaseEntity
     public override void Validate()
     {
         AddNotifications(new Contract<Notification>()
-                                .IsNotNullOrEmpty(nameof(Nome), "O nome é obrigatório.")
+                                .Requires()
+                                .IsNotNullOrEmpty(Nome, nameof(Nome), "O nome é obrigatório.")
                                 .IsGreaterThan(Quantidade, 0, nameof(Quantidade), "A quantidade é inválida.")
                                 .IsGreaterThan(Preco, 0, "O preço é inválido."));
     }
